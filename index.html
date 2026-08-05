@@ -1,0 +1,284 @@
+<title>Your Name — Academic Homepage</title>
+
+<style>
+  :root {
+    --bg:     #FFFFFF;
+    --text:   #1A1A1A;
+    --soft:   #585858;
+    --faint:  #8A8A8A;
+    --rule:   #E2E2E2;
+    --link:   #1A4E8A;
+    --serif:  Charter, 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, 'Times New Roman', serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:    #17191B;
+      --text:  #E6E6E6;
+      --soft:  #A8A8A8;
+      --faint: #7C7C7C;
+      --rule:  #2E3235;
+      --link:  #86B4E8;
+    }
+  }
+  :root[data-theme='dark'] {
+    --bg: #17191B; --text: #E6E6E6; --soft: #A8A8A8;
+    --faint: #7C7C7C; --rule: #2E3235; --link: #86B4E8;
+  }
+  :root[data-theme='light'] {
+    --bg: #FFFFFF; --text: #1A1A1A; --soft: #585858;
+    --faint: #8A8A8A; --rule: #E2E2E2; --link: #1A4E8A;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 60px 24px 80px;
+  }
+
+  a { color: var(--link); text-decoration: underline; text-underline-offset: 2px; }
+  a:hover { text-decoration-thickness: 2px; }
+  a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+
+  /* ---------- Header ---------- */
+
+  header {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .photo {
+    flex: 0 0 140px;
+    width: 140px;
+    height: 175px;
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    display: grid;
+    place-items: center;
+    color: var(--faint);
+    font-size: 13px;
+    overflow: hidden;
+  }
+  .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .head-text { min-width: 0; }
+
+  h1 {
+    font-weight: 700;
+    font-size: 1.85rem;
+    line-height: 1.2;
+    margin: 0 0 4px;
+  }
+
+  .name-alt { color: var(--faint); font-size: 0.95rem; margin: 0 0 14px; }
+
+  .affil { margin: 0 0 4px; color: var(--soft); }
+  .contact { margin: 14px 0 0; font-size: 0.95rem; color: var(--soft); }
+  .contact span { color: var(--rule); margin: 0 7px; }
+
+  /* ---------- Body ---------- */
+
+  section { margin-top: 42px; }
+
+  h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0 0 14px;
+  }
+
+  p { margin: 0 0 14px; }
+  p:last-child { margin-bottom: 0; }
+
+  ul { margin: 0; padding-left: 22px; }
+  li { margin-bottom: 7px; }
+  li:last-child { margin-bottom: 0; }
+
+  /* Education / experience / awards: year + content */
+
+  dl { margin: 0; }
+
+  dl > div {
+    display: grid;
+    grid-template-columns: 116px 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  dl > div:last-child { margin-bottom: 0; }
+
+  dt { color: var(--faint); font-size: 0.95rem; white-space: nowrap; }
+  dd { margin: 0; min-width: 0; }
+  dd .where { color: var(--soft); font-size: 0.95rem; }
+
+  /* Publications: hanging indent */
+
+  .bib { margin: 0; padding: 0; list-style: none; }
+
+  .bib li {
+    padding-left: 26px;
+    text-indent: -26px;
+    margin-bottom: 16px;
+  }
+  .bib li:last-child { margin-bottom: 0; }
+  .bib em { font-style: italic; }
+  .bib .me { font-weight: 700; }
+  .bib .links { text-indent: 0; font-size: 0.9rem; }
+
+  footer {
+    margin-top: 52px;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+    font-size: 0.9rem;
+    color: var(--faint);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    .page { padding: 40px 20px 60px; }
+    header { flex-direction: column; gap: 20px; }
+    .photo { flex-basis: auto; }
+    dl > div { grid-template-columns: 1fr; gap: 2px; }
+  }
+</style>
+
+<div class="page">
+
+  <header>
+    <!-- Replace with a real photo: <img src="photo.jpg" alt="Your Name"> -->
+    <div class="photo">Photo</div>
+
+    <div class="head-text">
+      <h1>[Your Name]</h1>
+      <p class="name-alt">[Chinese name, if you want it shown]</p>
+      <p class="affil">[M.S. student in Computer Science]</p>
+      <p class="affil">[Department], [University]</p>
+      <p class="contact">
+        <a href="mailto:your.name@example.edu">your.name@example.edu</a>
+        <span>·</span>
+        <a href="cv.pdf">CV</a>
+        <span>·</span>
+        <a href="#">Google Scholar</a>
+        <span>·</span>
+        <a href="#">GitHub</a>
+      </p>
+    </div>
+  </header>
+
+  <section>
+    <h2>About</h2>
+    <p>
+      [One or two sentences on what you study and why it matters. Be concrete —
+      not "I am interested in artificial intelligence," but "I study how models can
+      learn the grammar of a new language from only a few dozen labeled examples."]
+    </p>
+    <p>
+      [A second paragraph on where you came from and where you want to go next. Or delete it.]
+    </p>
+  </section>
+
+  <section>
+    <h2>Research interests</h2>
+    <ul>
+      <li>[First area] — [one sentence on the specific problem and your approach.]</li>
+      <li>[Second area] — [one sentence.]</li>
+      <li>[Third area] — [one sentence.]</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <dl>
+      <div>
+        <dt>2024 – present</dt>
+        <dd>
+          [M.S. in Computer Science]<br>
+          <span class="where">[University], [Department]. Advisor: [Advisor Name]</span>
+        </dd>
+      </div>
+      <div>
+        <dt>2020 – 2024</dt>
+        <dd>
+          [B.Eng. in Software Engineering]<br>
+          <span class="where">[University], [Department]</span>
+        </dd>
+      </div>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Publications</h2>
+    <ul class="bib">
+      <li>
+        <span class="me">[Your Name]</span>, [Coauthor], and [Coauthor].
+        [Paper title in sentence case].
+        <em>[Full venue name]</em>, 2026.
+        <div class="links">
+          <a href="#">PDF</a> · <a href="#">Code</a> · <a href="#">DOI</a>
+        </div>
+      </li>
+      <li>
+        [Coauthor], <span class="me">[Your Name]</span>, and [Coauthor].
+        [Second paper title].
+        <em>[Full venue name]</em>, 2025.
+        <div class="links">
+          <a href="#">PDF</a>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+    <dl>
+      <div>
+        <dt>Summer 2025</dt>
+        <dd>
+          [Role], [Organization or lab]<br>
+          <span class="where">[What you did and what came of it. Give a measurable result where you can.]</span>
+        </dd>
+      </div>
+      <div>
+        <dt>2024 – 2025</dt>
+        <dd>
+          [Project name]<br>
+          <span class="where">[One sentence on the project and your role.]</span>
+        </dd>
+      </div>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Awards</h2>
+    <dl>
+      <div>
+        <dt>2025</dt>
+        <dd>[Award name]<br><span class="where">[Awarding body]</span></dd>
+      </div>
+      <div>
+        <dt>2024</dt>
+        <dd>[Scholarship name]<br><span class="where">[Awarding body]</span></dd>
+      </div>
+    </dl>
+  </section>
+
+  <footer>Last updated August 2026</footer>
+
+</div>
